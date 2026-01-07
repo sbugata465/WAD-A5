@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Interactive Quiz</title>
+    <script type="text/javascript">
+        function checkAnswer(questionNumber) {
+            var userAns;
+            var correctAns;
+            var resultId;
+
+            if(questionNumber==1) {
+                userAns=quizForm.ans1.value;
+                correctAns="Delhi";
+                resultId="result1";
+            }
+            else if(questionNumber==2){
+                userAns=quizForm.ans2.value;
+                correctAns="Narendra Modi";
+                resultId="result2";
+            }
+            else if(questionNumber==3){
+                userAns=quizForm.ans3.value;
+                correctAns="Uttar Pradesh";
+                resultId="result3";
+            }
+
+            if(userAns.toLowerCase()==correctAns.toLowerCase()) {
+                document.getElementById(resultId).innerHTML="Correct!";
+            } 
+            else{
+                document.getElementById(resultId).innerHTML="Wrong! Correct answer: " + correctAns;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Interactive Quiz</h1>
+
+    <form name="quizForm">
+        <p>
+            What is the capital of India?<br>
+            Answer: <input type="text" name="ans1" />
+            <input type="button" value="Submit" onclick="checkAnswer(1)" /><br>
+            <span id="result1"></span>
+        </p>
+
+        <p>
+            Who is the Prime Minister of India?<br>
+            Answer: <input type="text" name="ans2" />
+            <input type="button" value="Submit" onclick="checkAnswer(2)" /><br>
+            <span id="result2"></span>
+        </p>
+
+        <p>
+            What is the most populated state in India?<br>
+            Answer: <input type="text" name="ans3" />
+            <input type="button" value="Submit" onclick="checkAnswer(3)" /><br>
+            <span id="result3"></span>
+        </p>
+    </form>
+</body>
+</html>
+	
