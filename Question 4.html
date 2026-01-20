@@ -8,7 +8,7 @@
             var password=document.getElementById("password").value;
             var phone=document.getElementById("phone").value;
 
-            var nameRegex = /^[A-Za-z]{3,}( [A-Za-z]{3,})*$/;
+            var nameRegex = /^[A-Za-z]{3,}([A-Za-z]{3,})*$/;
             if (!nameRegex.test(name)){
                 alert("Name must contain at least 3 alphabets and no numbers or special characters.");
                 return false;
